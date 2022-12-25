@@ -49,11 +49,11 @@
             <small class="form-text text-muted">Price must be greater than 0.</small>
         </div>
 
-        <input type="submit" class="w-100 btn btn-primary" value="Update article"/>
+        <input type="submit" class="w-100 btn btn-primary" value="Update Article"/>
     </form:form>
     <br>
     <form action="/remove/${aSingleVisitorObject.id}" method="POST">
-        <input class="btn btn-danger w-100" type="submit" value="delete"/>
+        <input class="btn btn-danger w-100" type="submit" value="Delete Article"/>
     </form>
     <br>
     <a href="/home">Dashboard</a>
