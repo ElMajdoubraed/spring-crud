@@ -15,18 +15,16 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class VisitorTModel {
+public class LoginModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; 
     
-    @Size(min=1, max=200, message="Article name is required")
-    private String articleName;
-    @Size(min=1, max=200, message="Article model required")
-    private String articleModel;
-    @Min(0)
-    private int price;
+    @Size(min=1, message="email is required")
+    private String email;
+    @Size(min=1, message="password is required")
+    private String password;
 
     @Column(updatable = false)
     @DateTimeFormat(pattern = "yyyy/MM/dd")
@@ -51,28 +49,20 @@ public class VisitorTModel {
         this.id = id;
     }
 
-    public String getArticleName() {
-        return this.articleName;
+    public String getEmail() {
+        return this.email;
     }
 
-    public void setArticleName(String articleName) {
-        this.articleName = articleName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getArticleModel() {
-        return this.articleModel;
+    public String getPassword() {
+        return this.password;
     }
 
-    public void setArticleModel(String model) {
-        this.articleModel = model;
-    }
-
-    public int getPrice() {
-        return this.price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
+    public void setPassword(String pass) {
+        this.password = pass;
     }
 
     public Date getCreatedAt() {

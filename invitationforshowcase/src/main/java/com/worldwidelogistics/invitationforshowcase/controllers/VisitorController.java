@@ -25,7 +25,7 @@ public class VisitorController {
     }    
 
     
-    @GetMapping("/visitorwelcomescreen")
+    @GetMapping("/")
     public String showWelcomeScreen() {
         // System.out.println("I was here in controller");
         return "index";
@@ -35,8 +35,13 @@ public class VisitorController {
     public String showAllVisitors(Model model) {
         model.addAttribute("listOfvisitors", visitorSer.showAllUser());
         return "viewVisitors";
-        
     }
+
+    @GetMapping("/home")
+    public String home(Model model) {
+        return "home";
+    }
+
     @GetMapping("/registrationviewpage")
     public String registrationViewForm(@ModelAttribute("visitorObject") VisitorTModel visitor) {
         return "registerVisitor";
@@ -70,9 +75,5 @@ public class VisitorController {
         visitorSer.deleteByID(id);
         return "redirect:/visitor";
     }
-    
-  
-    
-    
     
 }
